@@ -1,0 +1,47 @@
+
+body{
+    background-color: azure;
+}
+
+.text{
+    font-family: Arial;    
+}
+
+.gray{
+    color:darkslategray;
+}
+
+.lightGray{
+    color: lightslategray;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+li{
+    line-height: 1.5rem;
+}
+
+
+
+.button{
+    border-radius: 0.5vw;
+    border-width: 0vw;
+    background-color: antiquewhite;
+}
+
+.container{
+    margin:1vw;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .text{
+        font-size: 0.7rem;
+        }
+}
+
+
+
+ 

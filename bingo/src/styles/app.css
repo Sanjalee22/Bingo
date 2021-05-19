@@ -1,0 +1,21 @@
+.heading {
+  font-family: cursive;
+  background: purple;
+  color: antiquewhite;
+  text-align: center;
+  border-radius: 2vw;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.flex-item-left {
+  width: 20vw;
+}
+
+.flex-item-right {
+  width: 80vw;
+}
