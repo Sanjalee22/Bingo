@@ -31,7 +31,7 @@ export const checkBingo = (updatedTicketState, index) => {
         updatedTicketState[e]
       )
         return possibleWinningCombo[i];
-      else if (
+      if (
         !updatedTicketState[a] &&
         updatedTicketState[b] &&
         updatedTicketState[c] &&
@@ -39,7 +39,7 @@ export const checkBingo = (updatedTicketState, index) => {
         updatedTicketState[e]
       )
         return [a];
-      else if (
+      if (
         !updatedTicketState[b] &&
         updatedTicketState[a] &&
         updatedTicketState[c] &&
@@ -47,7 +47,7 @@ export const checkBingo = (updatedTicketState, index) => {
         updatedTicketState[e]
       )
         return [b];
-      else if (
+      if (
         !updatedTicketState[c] &&
         updatedTicketState[a] &&
         updatedTicketState[b] &&
@@ -55,7 +55,7 @@ export const checkBingo = (updatedTicketState, index) => {
         updatedTicketState[e]
       )
         return [c];
-      else if (
+      if (
         !updatedTicketState[d] &&
         updatedTicketState[a] &&
         updatedTicketState[b] &&
@@ -63,7 +63,7 @@ export const checkBingo = (updatedTicketState, index) => {
         updatedTicketState[d]
       )
         return [d];
-      else if (
+      if (
         !updatedTicketState[e] &&
         updatedTicketState[b] &&
         updatedTicketState[c] &&
