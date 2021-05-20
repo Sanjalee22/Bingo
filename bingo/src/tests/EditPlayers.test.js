@@ -18,15 +18,15 @@ it("renders Show Tickets button correctly", () => {
 
 it("renders input text box with default value correctly", () => {
   render(<EditPlayers />);
-  expect(screen.getByRole("textbox")).toHaveValue("1");
+  expect(screen.getByTestId("numberInput")).toHaveValue(1);
 });
 
 it("correctly displays the changed text in input", () => {
   render(<EditPlayers />);
-  const textBox = screen.getByRole("textbox");
-  expect(textBox).toHaveValue("1");
+  const textBox = screen.getByTestId("numberInput");
+  expect(textBox).toHaveValue(1);
   fireEvent.change(textBox, { target: { value: "2" } });
-  expect(textBox).toHaveValue("2");
+  expect(textBox).toHaveValue(2);
 });
 
 it("handles form submit event correctly", () => {

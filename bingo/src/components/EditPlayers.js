@@ -31,6 +31,7 @@ const EditPlayers = ({ changeTotalPlayers }) => {
           min={1}
           value={numberOfPlayers}
           onChange={onInputTextChange}
+          data-testid="numberInput"
         />
 
         <button className="button text gray-text bold" onClick={onFormSubmit}>
