@@ -120,6 +120,6 @@
     grid-template-columns: repeat(5, [col] 16vw);
   }
   .element {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 }

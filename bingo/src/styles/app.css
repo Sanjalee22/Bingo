@@ -16,7 +16,7 @@
 
 .flex-item-left {
   width: 20vw;
-  min-height: 82vh;
+  min-height: 80vh;
 }
 
 .colored {
@@ -33,12 +33,18 @@
   }
 
   .flex-item-left {
-    width: 90vw;
+    width: 92vw;
     min-height: 0vh;
+  }
+
+  .flex-item-right {
+    width: 92vw;
+    margin: 1vw;
   }
 
   .heading {
     font-size: 6vw;
-    width: 90vw;
+    width: 92vw;
+    margin: 1vw;
   }
 }
