@@ -27,7 +27,8 @@ const EditPlayers = ({ changeTotalPlayers }) => {
 
         <input
           className="inputText"
-          type="numeric"
+          type="number"
+          min={1}
           value={numberOfPlayers}
           onChange={onInputTextChange}
         />
