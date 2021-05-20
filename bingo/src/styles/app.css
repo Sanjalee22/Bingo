@@ -1,9 +1,11 @@
 .heading {
-  font-family: cursive;
+  font-family: Arial;
   background: purple;
   color: antiquewhite;
   text-align: center;
   border-radius: 2vw;
+  width: 97vw;
+  font-size: 3vw;
 }
 
 .flex-container {
@@ -33,5 +35,9 @@
   .flex-item-left {
     width: 90vw;
     min-height: 0vh;
+  }
+
+  .heading {
+    font-size: 6vw;
   }
 }

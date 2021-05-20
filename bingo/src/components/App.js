@@ -45,7 +45,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 className="heading">Travel Bingo!</h1>
+      <h1 className="heading">Traveller's Bingo!</h1>
       <div className="flex-container">
         <div className="flex-item-left container colored margined">
           <EditPlayers changeTotalPlayers={setTotalPlayers} />
