@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Bingo/static/css/main.5a9204ff.chunk.css",
+    "main.js": "/Bingo/static/js/main.4b26ba6b.chunk.js",
+    "main.js.map": "/Bingo/static/js/main.4b26ba6b.chunk.js.map",
+    "runtime-main.js": "/Bingo/static/js/runtime-main.d2f68100.js",
+    "runtime-main.js.map": "/Bingo/static/js/runtime-main.d2f68100.js.map",
+    "static/js/2.68814d32.chunk.js": "/Bingo/static/js/2.68814d32.chunk.js",
+    "static/js/2.68814d32.chunk.js.map": "/Bingo/static/js/2.68814d32.chunk.js.map",
+    "index.html": "/Bingo/index.html",
+    "static/css/main.5a9204ff.chunk.css.map": "/Bingo/static/css/main.5a9204ff.chunk.css.map",
+    "static/js/2.68814d32.chunk.js.LICENSE.txt": "/Bingo/static/js/2.68814d32.chunk.js.LICENSE.txt",
+    "static/media/bingo.e5457bdf.jfif": "/Bingo/static/media/bingo.e5457bdf.jfif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2f68100.js",
+    "static/js/2.68814d32.chunk.js",
+    "static/css/main.5a9204ff.chunk.css",
+    "static/js/main.4b26ba6b.chunk.js"
+  ]
+}
