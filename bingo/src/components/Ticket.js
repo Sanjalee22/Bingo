@@ -39,14 +39,11 @@ const Ticket = ({ ticketElements, calledCities }) => {
   };
 
   const isLastForBingo = (index) => {
-    var x= bingoElements != null &&
+    return bingoElements != null &&
       bingoElements.length === 1 &&
       bingoElements.includes(index)
       ? true
       : false;
-
-      console.log(x);
-      return x;
   };
 
   const showTicketElements = () => {
@@ -62,9 +59,13 @@ const Ticket = ({ ticketElements, calledCities }) => {
       return (
         <div
           key={index}
-          className={`element ${isCalled ? "generated" : ""} ${ticketState[index] ? "clicked" : ""} ${isBingoElement(index) ? "shake" : ""} ${isLastForBingo(index) ? "change-color" : ""}`}
+          className={`element ${isCalled ? "generated" : ""} ${
+            ticketState[index] ? "clicked" : ""
+          } ${isBingoElement(index) ? "shake" : ""} ${
+            isLastForBingo(index) ? "change-color" : ""
+          }`}
           onClick={() => onElementClick(index, isCalled)}
-        > 
+        >
           {element}
         </div>
       );
