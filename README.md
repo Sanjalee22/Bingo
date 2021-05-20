@@ -28,6 +28,11 @@ This is a fun Bingo app for travellers. It generates name of different places in
    + If the user is just one name call away from Bingo, that city name is highlighted in the ticket.
  * When there is a Bingo, all the cells which are part of the bingo combination, are highlighted with some animation to indicate the win.
 
+### Validations
+   
+   * User can only enter numeric value greater than one in the 'Number Of Players' input box.
+   * User can mark only those city name(s) in the ticket which is being called or have been called.
+
 ## Technology
 
 * ReactJS 17.0.2
@@ -57,7 +62,13 @@ Following are the steps to load the application in browser:
 ## Future Enhancements:
 
 1. The animations and effects, when the player is one name call away from bingo and on finally getting a bingo, can be made more appealing.
-2. For smaller screens, the UI layout can be improved. In the present layout, the list of cities which have been called is taking a lot of screen space. It can be converted to an on-demand component or pop-up.
+2. For smaller screens, the UI layout can be improved. 
+   * Current layout: The list of cities which have been called is taking a lot of screen space. 
+   * Suggested layout: It can be converted to an on-demand component or pop-up.
+3. Properly handle the change in number of players during the game. 
+   * Current flow: If user adds/ removes players (hence tickets) during the game, new tickets are rendered with incorrectly highlighted names.  
+   * Suggested flow: User should not be allowed to add/remove players during the game.
+   
    
   
       
