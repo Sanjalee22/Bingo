@@ -6,11 +6,18 @@ import DisplayCalledNames from "./DisplayCalledNames";
 import { generateRandomSequence } from "../util/utilities";
 import "../styles/app.css";
 
+const DEFAULT_NUMBER_OF_PLAYERS = 1;
+
 const App = () => {
-  const [totalPlayers, setTotalPlayers] = useState(1);
+  const [totalPlayers, setTotalPlayers] = useState(DEFAULT_NUMBER_OF_PLAYERS);
+
+  //maintain ticket for each player
   const [tickets, setTickets] = useState([]);
+
+  //maintain a list of the city names whicj have been called.
   const [calledCities, setCalledCities] = useState([]);
 
+  //generate a different ticket for each player which should remain the same if app re-renders
   useEffect(() => {
     const tempArray = [];
     for (let i = 0; i < totalPlayers; i++) {
@@ -24,29 +31,28 @@ const App = () => {
     setCalledCities([...calledCities, e]);
   };
 
+  const renderTickets = () => {
+    return tickets.map((citiesList, index) => {
+      return (
+        <Ticket
+          key={index}
+          ticketElements={citiesList}
+          calledCities={calledCities}
+        />
+      );
+    });
+  };
+
   return (
     <div>
       <h1 className="heading">Travel Bingo!</h1>
-      <EditPlayers changeTotalPlayers={setTotalPlayers} />
       <div className="flex-container">
-        <div className="flex-item-left">
-          <GenerateCityNames
-            // calledCity={calledCity}
-            updateCalledCities={updateCalledCities}
-          />
+        <div className="flex-item-left container colored margined">
+          <EditPlayers changeTotalPlayers={setTotalPlayers} />
+          <GenerateCityNames updateCalledCities={updateCalledCities} />
           <DisplayCalledNames calledCityNames={calledCities} />
         </div>
-        <div className="flex-item-right">
-          {tickets.map((citiesList, index) => {
-            return (
-              <Ticket
-                key={index}
-                ticketElements={citiesList}
-                currentCalledName={calledCities[calledCities.length - 1]}
-              />
-            );
-          })}
-        </div>
+        <div className="flex-item-right">{renderTickets()}</div>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
-import { allElements, possibleWinningCombo } from "./constants";
+import { allElements, possibleWinningCombo, ticketSize } from "./constants";
 
 //Generate random sequence of elements for a ticket
 export const generateRandomSequence = () => {
   var allElementsClone = [...allElements];
   var randomNumbersArray = [];
 
-  for (var i = 0; i < 25; ++i) {
+  for (var i = 0; i < ticketSize; ++i) {
     var random = Math.floor(Math.random() * allElementsClone.length);
     randomNumbersArray.push(allElementsClone[random]);
     allElementsClone.splice(random, 1);
@@ -17,7 +17,8 @@ export const generateRandomSequence = () => {
 };
 
 //Iterates through the ticket and checks if all indices in any of the winning
-//combo has been marked. If yes, there is a bingo.
+//combo has been marked. If yes, return that combo. 
+//If only one index out of the possible winning index is unmarked, return the unmarked index
 export const checkBingo = (updatedTicketState, index) => {
   for (let i = 0; i < possibleWinningCombo.length; ++i) {
     if (possibleWinningCombo[i].includes(index)) {
@@ -30,6 +31,46 @@ export const checkBingo = (updatedTicketState, index) => {
         updatedTicketState[e]
       )
         return possibleWinningCombo[i];
+      else if (
+        !updatedTicketState[a] &&
+        updatedTicketState[b] &&
+        updatedTicketState[c] &&
+        updatedTicketState[d] &&
+        updatedTicketState[e]
+      )
+        return [a];
+      else if (
+        !updatedTicketState[b] &&
+        updatedTicketState[a] &&
+        updatedTicketState[c] &&
+        updatedTicketState[d] &&
+        updatedTicketState[e]
+      )
+        return [b];
+      else if (
+        !updatedTicketState[c] &&
+        updatedTicketState[a] &&
+        updatedTicketState[b] &&
+        updatedTicketState[d] &&
+        updatedTicketState[e]
+      )
+        return [c];
+      else if (
+        !updatedTicketState[d] &&
+        updatedTicketState[a] &&
+        updatedTicketState[b] &&
+        updatedTicketState[c] &&
+        updatedTicketState[d]
+      )
+        return [d];
+      else if (
+        !updatedTicketState[e] &&
+        updatedTicketState[b] &&
+        updatedTicketState[c] &&
+        updatedTicketState[d] &&
+        updatedTicketState[a]
+      )
+        return [e];
     }
   }
   return null;

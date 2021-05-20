@@ -1,39 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import EditPlayers from "../components/EditPlayers";
 
 afterEach(cleanup);
 
-it("renders without crashing", () => {
+it("renders EditPlayers component without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<PlayersEditor />, div);
+  ReactDOM.render(<EditPlayers />, div);
 });
 
-it("renders submit button correctly", () => {
-  const { getByRole } = render(<PlayersEditor />);
-  expect(getByRole("button")).toHaveTextContent("Submit");
+it("renders Show Tickets button correctly", () => {
+  render(<EditPlayers />);
+  expect(screen.getByRole("button")).toHaveTextContent("Show Tickets");
 });
 
-it("renders test box with default value correctly", () => {
-  const { getByRole } = render(<PlayersEditor />);
-  expect(getByRole("textbox")).toHaveValue("1");
+it("renders input text box with default value correctly", () => {
+  render(<EditPlayers />);
+  expect(screen.getByRole("textbox")).toHaveValue("1");
 });
 
 it("correctly displays the changed text in input", () => {
-  const { getByRole } = render(<PlayersEditor />);
-  const textBox = getByRole("textbox");
+  render(<EditPlayers />);
+  const textBox = screen.getByRole("textbox");
   expect(textBox).toHaveValue("1");
   fireEvent.change(textBox, { target: { value: "2" } });
-  expect(textBox.value).toBe("2");
+  expect(textBox).toHaveValue("2");
 });
 
-it("handles submit event correctly", () => {
-  const changeNumberOfPlayers = jest.fn();
-  const { getByRole } = render(
-    <PlayersEditor changeNumberOfPlayers={changeNumberOfPlayers} />
-  );
-  fireEvent.click(getByRole("button"), { target: { value: "2" } });
-  expect(changeNumberOfPlayers).toHaveBeenCalledTimes(1);
+it("handles form submit event correctly", () => {
+  const changeTotalPlayers = jest.fn();
+  render(<EditPlayers changeTotalPlayers={changeTotalPlayers} />);
+  fireEvent.click(screen.getByRole("button"));
+  expect(changeTotalPlayers).toHaveBeenCalledTimes(1);
 });

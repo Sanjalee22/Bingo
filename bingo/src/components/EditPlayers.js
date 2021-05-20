@@ -14,34 +14,35 @@ const EditPlayers = ({ changeTotalPlayers }) => {
     changeTotalPlayers(numberOfPlayers);
   };
 
-    const onInputTextChange =(e)=>{
-      setNumberOfPlayers(e.target.value);
-    }
+  const onInputTextChange = (e) => {
+    setNumberOfPlayers(e.target.value);
+  };
 
   return (
-    <div className="container">
-      <form data-testid="form">
-        <div>
-          <label className="text gray">Number of players: </label>
-          <input
-            className="inputText"
-            type="numeric"
-            value={numberOfPlayers}
-            onChange={onInputTextChange}
-          />
+    <div>
+      <form>
+        <div className="margined">
+          <label className="text gray-text">Number of players: </label>
         </div>
-        <div>
-          <button className="button text gray" onClick={onFormSubmit}>
-            Go
-          </button>
-        </div>
+
+        <input
+          className="inputText"
+          type="numeric"
+          value={numberOfPlayers}
+          onChange={onInputTextChange}
+        />
+
+        <button className="button text gray-text bold" onClick={onFormSubmit}>
+          Show Tickets
+        </button>
+        <hr />
       </form>
     </div>
   );
 };
 
-EditPlayers.propTypes={
-    changeTotalPlayers: PropTypes.func
-}
+EditPlayers.propTypes = {
+  changeTotalPlayers: PropTypes.func,
+};
 
 export default EditPlayers;

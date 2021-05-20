@@ -14,8 +14,24 @@
 
 .flex-item-left {
   width: 20vw;
+  min-height: 82vh;
+}
+
+.colored {
+  background-color: lavender;
 }
 
 .flex-item-right {
   width: 80vw;
+}
+
+@media screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-item-left {
+    width: 90vw;
+    min-height: 0vh;
+  }
 }
