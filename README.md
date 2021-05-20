@@ -6,9 +6,30 @@ This is a fun Bingo app for travellers. It generates name of different places in
 
 ## Visual Preview
 
-Home Screen: For Computers
-Inline-style: 
-![alt text] (https://github.com/Sanjalee22/Bingo/blob/main/sampleScreens/home.png?raw=true)
+The application is responsive to changes in screen size.
+
+### Large Screen
+
+* Default layout:
+
+![alt text](https://github.com/Sanjalee22/Bingo/blob/main/sampleScreens/home.png "Large Home Screen")
+
+* Layout during the game, when some of the names have been called out:
+  + Last called name (Madrid) is highlighted in bold in left side panel and corresponding ticket element is highlighted with blue border.
+  + The names which have been called out are listed in left side panel.
+  + The called names which are present in the ticket are highlighted with blue background.
+  
+![alt text](https://github.com/Sanjalee22/Bingo/blob/main/sampleScreens/homeSelected.png "Large Home Screen Selected")
+
+### Small Screen
+
+* Layout for two players: 
+
+ ![alt text](https://github.com/Sanjalee22/Bingo/blob/main/sampleScreens/mobileMultiPlayer.png "Mobile Screen With Two Players") 
+ 
+* Layout during the game:
+
+![alt text](https://github.com/Sanjalee22/Bingo/blob/main/sampleScreens/mobileSelected.png "Mobile Screen Selected")
 
 ## Requirements
 
@@ -41,6 +62,7 @@ Inline-style:
 * ReactJS 17.0.2
 * React Hooks
 * React Testing Library for Unit Tests
+* Node Package Manager (npm)
 * Git with a commit history
 * Followed standard coding guidelines
 
