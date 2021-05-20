@@ -6,6 +6,9 @@ This is a fun Bingo app for travellers. It generates name of different places in
 
 ## Visual Preview
 
+Home Screen: For Computers
+Inline-style: 
+![alt text] (https://github.com/Sanjalee22/Bingo/blob/main/sampleScreens/home.png?raw=true)
 
 ## Requirements
 
